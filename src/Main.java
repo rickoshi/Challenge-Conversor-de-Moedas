@@ -9,35 +9,53 @@ public class Main {
         // The object can convert and print Moeda, return the value of Moeda, and return the String of Moeda
         ConverteMoeda converteMoeda = new ConverteMoeda();
 
-        System.out.println("Digite o número para converter a partir de: ");
-        // Call static method from MenuMoeda that prints available currencies
-        MenuMoeda.imprimeInformacoesMoedas();
+        // Create a variable that stores user option. It changes through the program
+        int opcaoUsuario;
 
-        int codigoMoedaInicial = scanner.nextInt();
-        System.out.println();
+        while (true) {
+            System.out.println("Digite o número para converter a partir de: ");
+            // Call static method from MenuMoeda that prints available currencies
+            MenuMoeda.imprimeInformacoesMoedas();
+            opcaoUsuario = scanner.nextInt();
 
-        // The base currency is set in the second to last parameter and the target currency is set in the last parameter
-        String endereco = "https://v6.exchangerate-api.com/v6/6b46ad142b98f85a3b33e80b/latest/" +
-                converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial);
+            // Break if user inputs 7 (constant in MenuMoeda class)
+            if (opcaoUsuario == MenuMoeda.OPCAO_SAIDA) {
+                break;
+            }
 
-        // Create the object to request and return Moeda
-        ConsultaMoeda consultaMoeda = new ConsultaMoeda();
-        Moeda novaMoeda = consultaMoeda.consultaMoeda(endereco);
+            // Create variable to store user's first input
+            int codigoMoedaInicial = opcaoUsuario;
+            System.out.println();
 
-        System.out.println("Digite o número para converter a partir de " +
-                converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial) + " para: ");
-        MenuMoeda.imprimeInformacoesMoedas();
+            // The base currency is set in the second to last parameter and the target currency is set in the last parameter
+            String endereco = "https://v6.exchangerate-api.com/v6/6b46ad142b98f85a3b33e80b/latest/" +
+                    converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial);
 
-        int codigoMoedaFinal = scanner.nextInt();
-        System.out.println();
+            // Create the object to request and return Moeda
+            ConsultaMoeda consultaMoeda = new ConsultaMoeda();
+            Moeda novaMoeda = consultaMoeda.consultaMoeda(endereco);
 
-        System.out.println("Digite o valor para ser convertido: ");
-        int valorUsuario = scanner.nextInt();
-        System.out.println();
+            System.out.println("Digite o número para converter a partir de " +
+                    converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial) + " para: ");
+            MenuMoeda.imprimeInformacoesMoedas();
+            opcaoUsuario = scanner.nextInt();
 
-        System.out.println("A moeda inicial é: ");
-        System.out.println(converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial));
-        System.out.println();
-        converteMoeda.converteMoeda(novaMoeda, codigoMoedaFinal, valorUsuario);
+            if (opcaoUsuario == MenuMoeda.OPCAO_SAIDA) {
+                break;
+            }
+
+            // Create variable to store user's second input
+            int codigoMoedaFinal = opcaoUsuario;
+            System.out.println();
+
+            System.out.println("Digite o valor para ser convertido: ");
+            int valorUsuario = scanner.nextInt();
+            System.out.println();
+
+            System.out.println("A moeda inicial é: ");
+            System.out.println(converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial));
+            System.out.println();
+            converteMoeda.converteMoeda(novaMoeda, codigoMoedaFinal, valorUsuario);
+        }
     }
 }
