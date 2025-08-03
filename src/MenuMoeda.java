@@ -1,5 +1,7 @@
 public class MenuMoeda {
-    // Declare a constant for the exit option
+    // Declare constant for minimum currency option
+    public static final int OPCAO_MOEDA_MINIMA = 1;
+    // Declare constant for the exit option
     public static final int OPCAO_SAIDA = 7;
 
     public static void imprimeInformacoesMoedas() {
@@ -11,5 +13,13 @@ public class MenuMoeda {
         System.out.println("6) USD - Dólar americano");
         System.out.println(OPCAO_SAIDA + ") Sair");
         System.out.println("******************************");
+    }
+
+    public static boolean isOpcaoInvalida(int opcao) {
+        return (opcao < OPCAO_MOEDA_MINIMA || opcao > OPCAO_SAIDA);
+    }
+
+    public static boolean isOpcaoSair(int opcao) {
+        return opcao == OPCAO_SAIDA;
     }
 }
