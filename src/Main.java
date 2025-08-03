@@ -10,12 +10,9 @@ public class Main {
         ConverteMoeda converteMoeda = new ConverteMoeda();
 
         System.out.println("Digite o número para converter a partir de: ");
-        System.out.println("1) ARS");
-        System.out.println("2) BOB");
-        System.out.println("3) BRL");
-        System.out.println("4) CLP");
-        System.out.println("5) COP");
-        System.out.println("6) USD");
+        // Call static method from MenuMoeda that prints available currencies
+        MenuMoeda.imprimeInformacoesMoedas();
+
         int codigoMoedaInicial = scanner.nextInt();
         System.out.println();
 
@@ -29,12 +26,8 @@ public class Main {
 
         System.out.println("Digite o número para converter a partir de " +
                 converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial) + " para: ");
-        System.out.println("1) ARS");
-        System.out.println("2) BOB");
-        System.out.println("3) BRL");
-        System.out.println("4) CLP");
-        System.out.println("5) COP");
-        System.out.println("6) USD");
+        MenuMoeda.imprimeInformacoesMoedas();
+
         int codigoMoedaFinal = scanner.nextInt();
         System.out.println();
 
