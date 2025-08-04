@@ -1,6 +1,7 @@
 public class ConverteMoeda {
 
-    public void converteMoeda(Moeda moeda, int codigoMoeda, double valor) {
+    // Method prints information and returns a value
+    public double converteMoeda(Moeda moeda, int codigoMoeda, double valor) {
         System.out.println("A moeda será convertida para: ");
         System.out.println(retornaCodigoMoedaString(codigoMoeda));
         System.out.println();
@@ -9,6 +10,8 @@ public class ConverteMoeda {
         System.out.println("Taxa de conversão: ");
         System.out.println(valorMoedaConvertida);
         System.out.println();
+
+        return valorMoedaConvertida;
     }
 
     public double retornaValorMoeda(MoedaTaxaConversao moedaTaxaConversao, int codigoMoeda) {

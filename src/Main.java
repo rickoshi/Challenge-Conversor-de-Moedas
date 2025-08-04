@@ -1,7 +1,31 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    // Create ArrayList to store conversion history
+    // final prevents the list from being reassigned
+    private static final List<HistoricoConversao> historicoConversao = new ArrayList<>();
+
+    private static void exibeHistorico() {
+        if (historicoConversao.isEmpty()) {
+            System.out.println("---------------------------------------------");
+            System.out.println("Sem histórico de conversões");
+            System.out.println("---------------------------------------------");
+            System.out.println();
+            return;
+        }
+        System.out.println("---------------------------------------------");
+        System.out.println("Histórico das conversões");
+        for (HistoricoConversao itemHistorico : historicoConversao) {
+            System.out.println(itemHistorico);
+        }
+        System.out.println("---------------------------------------------");
+        System.out.println();
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -10,7 +34,7 @@ public class Main {
         // The object can convert and print Moeda, return the value of Moeda, and return the String of Moeda
         ConverteMoeda converteMoeda = new ConverteMoeda();
 
-        // Create a variable that stores user option. It changes through the program
+        // Create variable that stores user option. It changes through the program
         int opcaoUsuario;
 
         while (true) {
@@ -67,7 +91,17 @@ public class Main {
                 System.out.println("A moeda inicial é: ");
                 System.out.println(converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial));
                 System.out.println();
-                converteMoeda.converteMoeda(novaMoeda, codigoMoedaFinal, valorUsuario);
+                double valorConvertido = converteMoeda.converteMoeda(novaMoeda, codigoMoedaFinal, valorUsuario);
+
+                // Create object of conversion history
+                // Since the userInput is an integer, convert and use it as parameter
+                HistoricoConversao historico = new HistoricoConversao(converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial),
+                        converteMoeda.retornaCodigoMoedaString(codigoMoedaFinal),
+                        valorUsuario,
+                        valorConvertido);
+
+                // Store object in List
+                historicoConversao.add(historico);
 
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Digite apenas números inteiros");
@@ -76,5 +110,8 @@ public class Main {
                 scanner.next();
             }
         }
+        System.out.println();
+        exibeHistorico();
+        System.out.println("Fim do programa");
     }
 }
