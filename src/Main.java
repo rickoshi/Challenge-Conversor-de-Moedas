@@ -14,21 +14,15 @@ public class Main {
         int opcaoUsuario;
 
         while (true) {
-            System.out.println("Digite o número para converter a partir de: ");
+            // Initial message: "Digite o número para converter a partir de: "
+            MenuMoeda.imprimeMensagemPrimeiraMoeda();
             // Call static method from MenuMoeda that prints available currencies
             MenuMoeda.imprimeInformacoesMoedas();
 
             try {
-                opcaoUsuario = scanner.nextInt();
                 // Validate user input among the options available
-                if (MenuMoeda.isOpcaoInvalida(opcaoUsuario)) {
-                    System.out.println("Erro: Digite um número válido");
-                    System.out.println("Digite um número entre " +
-                            MenuMoeda.OPCAO_MOEDA_MINIMA + " e " +
-                            MenuMoeda.OPCAO_SAIDA);
-                    System.out.println();
-                    continue;
-                }
+                opcaoUsuario = MenuMoeda.retornaOpcaoValida(scanner);
+
                 // Break if user inputs 7 (constant in MenuMoeda class)
                 if (MenuMoeda.isOpcaoSair(opcaoUsuario)) {
                     break;
@@ -46,20 +40,12 @@ public class Main {
                 ConsultaMoeda consultaMoeda = new ConsultaMoeda();
                 Moeda novaMoeda = consultaMoeda.consultaMoeda(endereco);
 
+                // Print message for second currency
                 System.out.println("Digite o número para converter a partir de " +
                         converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial) + " para: ");
                 MenuMoeda.imprimeInformacoesMoedas();
 
-                opcaoUsuario = scanner.nextInt();
-
-                if (MenuMoeda.isOpcaoInvalida(opcaoUsuario)) {
-                    System.out.println("Erro: Digite um número válido");
-                    System.out.println("Digite um número entre " +
-                            MenuMoeda.OPCAO_MOEDA_MINIMA + " e " +
-                            MenuMoeda.OPCAO_SAIDA);
-                    System.out.println();
-                    continue;
-                }
+                opcaoUsuario = MenuMoeda.retornaOpcaoValida(scanner);
 
                 if (MenuMoeda.isOpcaoSair(opcaoUsuario)) {
                     break;
