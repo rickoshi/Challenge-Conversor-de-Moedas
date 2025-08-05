@@ -50,6 +50,9 @@ public class Main {
                 // Break if user inputs 7 (constant in MenuMoeda class)
                 if (MenuMoeda.isOpcaoSair(opcaoUsuario)) {
                     break;
+                } else if (MenuMoeda.isOpcaoHistorico(opcaoUsuario)) {
+                    exibeHistorico();
+                    continue;
                 }
 
                 // Create variable to store user's first input
@@ -73,6 +76,9 @@ public class Main {
 
                 if (MenuMoeda.isOpcaoSair(opcaoUsuario)) {
                     break;
+                } else if (MenuMoeda.isOpcaoHistorico(opcaoUsuario)) {
+                    exibeHistorico();
+                    continue;
                 }
 
                 // Create variable to store user's second input
