@@ -16,24 +16,24 @@ public class ConverteMoeda {
 
     public double retornaValorMoeda(MoedaTaxaConversao moedaTaxaConversao, int codigoMoeda) {
         return switch (codigoMoeda) {
-            case 1 -> moedaTaxaConversao.ARS();
-            case 2 -> moedaTaxaConversao.BOB();
-            case 3 -> moedaTaxaConversao.BRL();
-            case 4 -> moedaTaxaConversao.CLP();
-            case 5 -> moedaTaxaConversao.COP();
-            case 6 -> moedaTaxaConversao.USD();
+            case Constantes.ARS -> moedaTaxaConversao.ARS();
+            case Constantes.BOB -> moedaTaxaConversao.BOB();
+            case Constantes.BRL -> moedaTaxaConversao.BRL();
+            case Constantes.CLP -> moedaTaxaConversao.CLP();
+            case Constantes.COP -> moedaTaxaConversao.COP();
+            case Constantes.USD -> moedaTaxaConversao.USD();
             default -> -1;
         };
     }
 
     public String retornaCodigoMoedaString(int codigoMoeda) {
         return switch (codigoMoeda) {
-            case 1 -> "ARS";
-            case 2 -> "BOB";
-            case 3 -> "BRL";
-            case 4 -> "CLP";
-            case 5 -> "COP";
-            case 6 -> "USD";
+            case Constantes.ARS -> "ARS";
+            case Constantes.BOB -> "BOB";
+            case Constantes.BRL -> "BRL";
+            case Constantes.CLP -> "CLP";
+            case Constantes.COP -> "COP";
+            case Constantes.USD -> "USD";
             default -> "";
         };
     }
