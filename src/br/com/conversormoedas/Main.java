@@ -133,7 +133,7 @@ public class Main {
         exibeHistorico();
 
         try (FileWriter escreveLogConversoes = new FileWriter("LogConversoes.txt")) {
-            escreveLogConversoes.write("Registros de Logs");
+            escreveLogConversoes.write("Registros de Logs\n");
             for (HistoricoConversao itemHistorico : historicoConversao) {
                 escreveLogConversoes.write(itemHistorico.toString());
                 escreveLogConversoes.write("\n");
