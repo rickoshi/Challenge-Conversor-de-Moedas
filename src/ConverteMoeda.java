@@ -16,24 +16,36 @@ public class ConverteMoeda {
 
     public double retornaValorMoeda(MoedaTaxaConversao moedaTaxaConversao, int codigoMoeda) {
         return switch (codigoMoeda) {
-            case Constantes.ARS -> moedaTaxaConversao.ARS();
-            case Constantes.BOB -> moedaTaxaConversao.BOB();
-            case Constantes.BRL -> moedaTaxaConversao.BRL();
-            case Constantes.CLP -> moedaTaxaConversao.CLP();
-            case Constantes.COP -> moedaTaxaConversao.COP();
-            case Constantes.USD -> moedaTaxaConversao.USD();
+            case Constantes.ARS_INTEGER -> moedaTaxaConversao.ARS();
+            case Constantes.BOB_INTEGER -> moedaTaxaConversao.BOB();
+            case Constantes.BRL_INTEGER -> moedaTaxaConversao.BRL();
+            case Constantes.CLP_INTEGER -> moedaTaxaConversao.CLP();
+            case Constantes.COP_INTEGER -> moedaTaxaConversao.COP();
+            case Constantes.USD_INTEGER -> moedaTaxaConversao.USD();
+            case Constantes.CAD_INTEGER -> moedaTaxaConversao.CAD();
+            case Constantes.CNY_INTEGER -> moedaTaxaConversao.CNY();
+            case Constantes.EUR_INTEGER -> moedaTaxaConversao.EUR();
+            case Constantes.GBP_INTEGER -> moedaTaxaConversao.GBP();
+            case Constantes.JPY_INTEGER -> moedaTaxaConversao.JPY();
+            case Constantes.KRW_INTEGER -> moedaTaxaConversao.KRW();
             default -> -1;
         };
     }
 
     public String retornaCodigoMoedaString(int codigoMoeda) {
         return switch (codigoMoeda) {
-            case Constantes.ARS -> "ARS";
-            case Constantes.BOB -> "BOB";
-            case Constantes.BRL -> "BRL";
-            case Constantes.CLP -> "CLP";
-            case Constantes.COP -> "COP";
-            case Constantes.USD -> "USD";
+            case Constantes.ARS_INTEGER -> Constantes.ARS_STRING;
+            case Constantes.BOB_INTEGER -> Constantes.BOB_STRING;
+            case Constantes.BRL_INTEGER -> Constantes.BRL_STRING;
+            case Constantes.CLP_INTEGER -> Constantes.CLP_STRING;
+            case Constantes.COP_INTEGER -> Constantes.COP_STRING;
+            case Constantes.USD_INTEGER -> Constantes.USD_STRING;
+            case Constantes.CAD_INTEGER -> Constantes.CAD_STRING;
+            case Constantes.CNY_INTEGER -> Constantes.CNY_STRING;
+            case Constantes.EUR_INTEGER -> Constantes.EUR_STRING;
+            case Constantes.GBP_INTEGER -> Constantes.GBP_STRING;
+            case Constantes.JPY_INTEGER -> Constantes.JPY_STRING;
+            case Constantes.KRW_INTEGER -> Constantes.KRW_STRING;
             default -> "";
         };
     }
