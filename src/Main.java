@@ -5,6 +5,8 @@ import br.com.conversormoedas.core.MenuMoeda;
 import br.com.conversormoedas.model.HistoricoConversao;
 import br.com.conversormoedas.model.Moeda;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -127,6 +129,16 @@ public class Main {
         }
         System.out.println();
         exibeHistorico();
+
+        try (FileWriter escreveLogConversoes = new FileWriter("LogConversoes.txt")) {
+            escreveLogConversoes.write("Registros de Logs");
+            for (HistoricoConversao itemHistorico : historicoConversao) {
+                escreveLogConversoes.write(itemHistorico.toString());
+                escreveLogConversoes.write("\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Erro: Não foi possível gerar o registros de logs");
+        }
         System.out.println("Fim do programa");
     }
 }
