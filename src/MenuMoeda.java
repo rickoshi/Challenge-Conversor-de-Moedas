@@ -21,6 +21,7 @@ public class MenuMoeda {
     }
 
     public static void imprimeMensagemPrimeiraMoeda() {
+        System.out.println();
         System.out.println("Digite o número para converter a partir de: ");
     }
 

@@ -28,6 +28,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String chaveApi = GerenciadorAPI.getChaveApi();
+
         Scanner scanner = new Scanner(System.in);
 
         // Create the object to convert Moeda
@@ -60,7 +62,7 @@ public class Main {
                 System.out.println();
 
                 // The base currency is set in the second to last parameter and the target currency is set in the last parameter
-                String endereco = "https://v6.exchangerate-api.com/v6/6b46ad142b98f85a3b33e80b/latest/" +
+                String endereco = "https://v6.exchangerate-api.com/v6/" + chaveApi + "/latest/" +
                         converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial);
 
                 // Create the object to request and return Moeda
