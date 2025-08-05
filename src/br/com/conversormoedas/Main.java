@@ -1,3 +1,5 @@
+package br.com.conversormoedas;
+
 import br.com.conversormoedas.api.ConsultaMoeda;
 import br.com.conversormoedas.api.GerenciadorAPI;
 import br.com.conversormoedas.core.ConverteMoeda;

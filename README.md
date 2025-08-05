@@ -85,7 +85,7 @@ javac -cp dependencies/gson-2.13.1.jar -d out src/*.java
 Ainda no terminal, execute:
 
 ```bash
-java -cp out;dependencies/gson-2.13.1.jar Main
+java -cp out;dependencies/gson-2.13.1.jar br.com.conversormoedas.Main
 ```
 
 > Obs: No Linux/Mac, substitua ; por : no classpath.
