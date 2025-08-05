@@ -1,3 +1,8 @@
+package br.com.conversormoedas.core;
+
+import br.com.conversormoedas.model.Moeda;
+import br.com.conversormoedas.model.MoedaTaxaConversao;
+
 public class ConverteMoeda {
 
     // Method prints information and returns a value

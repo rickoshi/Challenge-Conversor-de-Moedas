@@ -1,3 +1,10 @@
+import br.com.conversormoedas.api.ConsultaMoeda;
+import br.com.conversormoedas.api.GerenciadorAPI;
+import br.com.conversormoedas.core.ConverteMoeda;
+import br.com.conversormoedas.core.MenuMoeda;
+import br.com.conversormoedas.model.HistoricoConversao;
+import br.com.conversormoedas.model.Moeda;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -32,8 +39,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Create the object to convert Moeda
-        // The object can convert and print Moeda, return the value of Moeda, and return the String of Moeda
+        // Create the object to convert br.com.conversormoedas.model.Moeda
+        // The object can convert and print br.com.conversormoedas.model.Moeda, return the value of br.com.conversormoedas.model.Moeda, and return the String of br.com.conversormoedas.model.Moeda
         ConverteMoeda converteMoeda = new ConverteMoeda();
 
         // Create variable that stores user option. It changes through the program
@@ -42,14 +49,14 @@ public class Main {
         while (true) {
             // Initial message: "Digite o número para converter a partir de: "
             MenuMoeda.imprimeMensagemPrimeiraMoeda();
-            // Call static method from MenuMoeda that prints available currencies
+            // Call static method from br.com.conversormoedas.core.MenuMoeda that prints available currencies
             MenuMoeda.imprimeInformacoesMoedas();
 
             try {
                 // Validate user input among the options available
                 opcaoUsuario = MenuMoeda.retornaOpcaoValida(scanner);
 
-                // Break if user inputs 7 (constant in MenuMoeda class)
+                // Break if user inputs 7 (constant in br.com.conversormoedas.core.MenuMoeda class)
                 if (MenuMoeda.isOpcaoSair(opcaoUsuario)) {
                     break;
                 } else if (MenuMoeda.isOpcaoHistorico(opcaoUsuario)) {
@@ -65,7 +72,7 @@ public class Main {
                 String endereco = "https://v6.exchangerate-api.com/v6/" + chaveApi + "/latest/" +
                         converteMoeda.retornaCodigoMoedaString(codigoMoedaInicial);
 
-                // Create the object to request and return Moeda
+                // Create the object to request and return br.com.conversormoedas.model.Moeda
                 ConsultaMoeda consultaMoeda = new ConsultaMoeda();
                 Moeda novaMoeda = consultaMoeda.consultaMoeda(endereco);
 

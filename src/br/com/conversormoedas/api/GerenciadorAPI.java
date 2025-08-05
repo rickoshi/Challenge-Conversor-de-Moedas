@@ -1,3 +1,5 @@
+package br.com.conversormoedas.api;
+
 import java.util.Scanner;
 
 public class GerenciadorAPI {

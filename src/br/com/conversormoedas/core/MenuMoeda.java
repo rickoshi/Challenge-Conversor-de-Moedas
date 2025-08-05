@@ -1,3 +1,5 @@
+package br.com.conversormoedas.core;
+
 import java.util.Scanner;
 
 public class MenuMoeda {

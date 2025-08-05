@@ -1,3 +1,5 @@
+package br.com.conversormoedas.core;
+
 public class Constantes {
 
     // Declare constant for conversion history
@@ -5,11 +7,11 @@ public class Constantes {
 
     // Currency options
     // To add a currency, the following must be modified:
-    // MoedaTaxaConversao
+    // br.com.conversormoedas.model.MoedaTaxaConversao
     // Constants.OPCAO_SAIDA
-    // MenuMoeda.imprimeInformacoesMoedas()
-    // ConverteMoeda.retornaValorMoeda()
-    // ConverteMoeda.retornaCodigoMoedaString()
+    // br.com.conversormoedas.core.MenuMoeda.imprimeInformacoesMoedas()
+    // br.com.conversormoedas.core.ConverteMoeda.retornaValorMoeda()
+    // br.com.conversormoedas.core.ConverteMoeda.retornaCodigoMoedaString()
 
     // Currency number options
     public static final int ARS_INTEGER = 1;

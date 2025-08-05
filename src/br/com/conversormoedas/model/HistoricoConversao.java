@@ -1,3 +1,5 @@
+package br.com.conversormoedas.model;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

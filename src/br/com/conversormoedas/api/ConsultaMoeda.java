@@ -1,3 +1,6 @@
+package br.com.conversormoedas.api;
+
+import br.com.conversormoedas.model.Moeda;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -8,7 +11,7 @@ import java.net.http.HttpResponse;
 
 public class ConsultaMoeda {
 
-    // This method creates the client, request and response and returns a record Moeda
+    // This method creates the client, request and response and returns a record br.com.conversormoedas.model.Moeda
     public Moeda consultaMoeda (String endereco) {
 
         // Create the client, request and response. All of them surrounded by a try-catch statement
