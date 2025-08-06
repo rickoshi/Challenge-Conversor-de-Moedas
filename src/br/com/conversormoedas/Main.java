@@ -99,7 +99,7 @@ public class Main {
                 System.out.println();
 
                 System.out.println("Digite o valor para ser convertido: ");
-                int valorUsuario = scanner.nextInt();
+                double valorUsuario = scanner.nextDouble();
 
                 if (valorUsuario <= 0) {
                     System.out.println("Erro. O valor deve ser positivo");
