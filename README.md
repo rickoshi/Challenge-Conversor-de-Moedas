@@ -8,6 +8,10 @@ O usuário também pode visualizar o histórico de conversões feitas na mesma s
 
 ![Badge-Conversor](https://github.com/rickoshi/Challenge-Conversor-de-Moedas/blob/media/Badge-Conversor.png?raw=true)
 
+## 🎥 Demonstração
+
+![Challenge-Conversor-de-Moedas-Demonstração](https://github.com/rickoshi/Challenge-Conversor-de-Moedas/blob/media/Challenge-Conversor-de-Moedas-Demonstra%C3%A7%C3%A3o.gif?raw=true)
+
 ## 🔍 Visão Geral
 
 A aplicação:
