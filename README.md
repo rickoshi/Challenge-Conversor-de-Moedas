@@ -6,7 +6,7 @@ O conversor oferece interação textual (via console) onde é possível converte
 
 O usuário também pode visualizar o histórico de conversões feitas na mesma sessão e ao sair o programa irá gerar um arquivo de log com todos os registros.
 
-
+![Badge-Conversor](https://github.com/rickoshi/Challenge-Conversor-de-Moedas/blob/media/Badge-Conversor.png?raw=true)
 
 ## 🔍 Visão Geral
 
